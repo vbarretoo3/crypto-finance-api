@@ -1,0 +1,258 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Sora', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(33, 35, 54);
+  color: rgb(255, 255, 255);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.image {
+  height: 5vh;
+  width: 5vh;
+}
+
+.container {
+  display: flex;
+  text-align: center;
+}
+
+.row {
+  border: 1px solid lightgray;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  border-radius: 25px;
+  padding: 1%;
+  margin: 2%;
+  gap: 25px;
+  width: 20%;
+}
+
+.row:hover {
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  border-top: 1px solid black;
+  background: rgb(45, 45, 63);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  justify-content: space-between;
+}
+
+.logo {
+  margin: 1%;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  max-width: 30%;
+  padding: 1.5%;
+  border-radius: 20px;
+  border: 1px solid white;;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
+  background: none;
+  color: white;
+  font-family: 'Sora';
+}
+
+button:hover {
+  border: 2px solid green;;
+  box-shadow: 0px 0px 5px rgba(0, 128, 0, 0.3);
+  background: none;
+  font-weight: bold;
+  color: green;
+
+}
+
+.description-header {
+  display: flex;
+  gap: 2%;
+  align-items: center;
+}
+
+.description-subheader {
+  display: flex;
+  gap: 2%;
+}
+
+.header-image {
+  width: 4vw;
+  height: 4vw;
+}
+
+.description {
+  margin: 0% 4%;
+}
+
+.coins {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
+  gap: 25px;
+  padding: 2%;
+}
+
+.item {
+  border: 1px solid lightgray;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  border-radius: 25px;
+  width: 100%;
+  padding: 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  grid-template-areas: 
+  "img img symbol price"
+  "img img name price";
+}
+
+.coin-name {
+  grid-area: name;
+  text-align: left;
+}
+
+.coin-image {
+  height: 70%;
+  width: 70%;
+  grid-area: img;
+}
+
+.coin-symbol {
+  text-align: left;
+  grid-area: symbol;
+}
+
+.coin-price {
+  grid-area: price;
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+.border {
+  padding: 2%;
+}
+
+.footer {
+  border-top: 1px solid black;
+  background: rgb(45, 45, 63);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  display: grid;
+  position: absolute;
+  bottom: 0;
+  width: 96%;
+}
+
+.positive {
+  color: rgb(38, 179, 38);
+}
+
+.negative {
+  color: rgb(209, 12, 12);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(80, 152, 196);
+}
+
+.header-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide-menu {
+  display: none;
+}
+
+.show-menu {
+  position: absolute;
+  right: 0;
+  background: lightgray;
+  justify-content: right;
+  height: 80%;
+  width: 25%;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.input {
+  padding-left: 5%;
+  height: 2vw;
+  border: 1px solid lightgray;
+  border-radius: 50px;
+  margin-right: 2vw; 
+}
+
+svg {
+  height: 2.5vw;
+  width: 2.5vw;
+}
+
+@media (max-width: 600px) {
+  .show-menu {
+    width: 100%;
+    height: 100%;
+  }
+  .container {
+    flex-direction: column;
+    text-align: left;
+  }
+  .row {
+    padding: 2%;
+    width: 93%;
+    display: flex;
+    align-items: center;
+  }
+  .coins {
+    flex-direction: column;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .item {
+    padding: 2%;
+    width: 93%;
+    display: flex;
+    justify-content: space-around;
+    gap: 5%;
+  }
+  .coin-image {
+    height: 10vw;
+    width: 10vw;
+  }
+  button {
+    width: 40%;
+    padding: 2vw;
+    margin: 4%;
+  }
+  .input {
+    height: 4vh;
+  }
+  .footer {
+  position: relative;
+  }
+}
