@@ -50,7 +50,7 @@ code {
 }
 
 .logo {
-  margin: 1%;
+  margin-left: 2%;
   cursor: pointer;
 }
 
@@ -70,7 +70,8 @@ button {
   font-family: 'Sora';
 }
 
-button:hover {
+button:hover,
+button.active {
   border: 2px solid green;;
   box-shadow: 0px 0px 5px rgba(0, 128, 0, 0.3);
   background: none;
@@ -83,6 +84,7 @@ button:hover {
   display: flex;
   gap: 2%;
   align-items: center;
+  margin-top: 2%;
 }
 
 .description-subheader {
@@ -93,6 +95,7 @@ button:hover {
 .header-image {
   width: 4vw;
   height: 4vw;
+  margin-right: 2%;
 }
 
 .description {
@@ -147,18 +150,15 @@ button:hover {
   cursor: pointer;
 }
 
-.border {
-  padding: 2%;
-}
-
 .footer {
   border-top: 1px solid black;
   background: rgb(45, 45, 63);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
   display: grid;
-  position: absolute;
+  position: relative;
   bottom: 0;
-  width: 96%;
+  width: 100%;
+  padding: 2%;
 }
 
 .positive {
@@ -179,6 +179,7 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding-right: 2%;
 }
 
 .hide-menu {
@@ -207,9 +208,53 @@ li {
   margin-right: 2vw; 
 }
 
+.coin-info {
+  border: 1px solid lightgray;
+  border-radius: 15px;
+  margin-bottom: 3%;
+}
+
+.coin-info-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  border-bottom: 1px solid lightgray;
+  padding: 1%;
+}
+
+.coin-info-row-different {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 1fr 1fr;
+  padding: 1%;
+  grid-template-areas: 
+  "title title"
+  "positive negative";
+  justify-content: center;
+  align-items: center;
+}
+
+.coin-info-title {
+  grid-area: title;
+  text-align: center;
+}
+
+.coin-info-positive {
+  grid-area: positive;
+  text-align: center;
+}
+
+.coin-info-negative {
+  grid-area: negative;
+  text-align: center;
+}
+
 svg {
   height: 2.5vw;
   width: 2.5vw;
+}
+
+.graphs {
+ margin: 2%;
 }
 
 @media (max-width: 600px) {
@@ -254,5 +299,7 @@ svg {
   }
   .footer {
   position: relative;
+  width: 96%;
+  padding: 2%;
   }
 }

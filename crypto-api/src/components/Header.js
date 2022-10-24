@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <>
       <div className='header border'>
-        <img src='https://www.canva.com/design/DAFPz9-rZYE/view' className='logo' onClick={() => handleClick()} alt='Logo'/>
+        <h1 className='logo' onClick={() => handleClick()}> Mock Crypto </h1>
         <div className='header-right'>
           <input className='input' type='text' placeholder='search coin' />
           <div onClick={() => handleOpenMenu()} className='hamburguer-menu'>

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import CoinSummary from '../CoinSummary';
+import CoinSummary from '../../components/CoinSummary';
 
 export default function Home() {
   const [data, setData] = useState(null)

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import CoinDetails from '../CoinDetails'
+import CoinDetails from '../../components/CoinDetails'
 
 export default function Coins() {
   const [data, setData] = useState(null)
