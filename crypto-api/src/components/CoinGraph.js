@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import useAxios from './useAxios';
+import useAxios from '../hooks/useAxios';
 import moment from 'moment';
 import {
     Chart as ChartJS,

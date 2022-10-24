@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import {AiOutlineLike, AiOutlineDislike} from 'react-icons/ai';
-import CoinGraph from '../CoinGraph';
+import CoinGraph from '../../components/CoinGraph';
 
 export default function Coin() {
   const {id} = useParams()
