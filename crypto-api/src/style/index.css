@@ -42,6 +42,7 @@ code {
 }
 
 .header {
+  width: 100%;
   display: flex;
   border-top: 1px solid black;
   background: rgb(45, 45, 63);
@@ -59,7 +60,7 @@ code {
   justify-content: center;
 }
 
-button {
+.button-coins {
   max-width: 30%;
   padding: 1.5%;
   border-radius: 20px;
@@ -70,14 +71,31 @@ button {
   font-family: 'Sora';
 }
 
-button:hover,
-button.active {
+.button-coins:hover,
+.button-coins.active {
   border: 2px solid green;;
   box-shadow: 0px 0px 5px rgba(0, 128, 0, 0.3);
   background: none;
   font-weight: bold;
   color: green;
 
+}
+
+.interval {
+  background-color: rgb(54, 57, 82);
+  box-shadow: 0px 0px 15px rgba(54, 57, 82);
+  color: white;
+  font-size: 1.5rem;
+  font-family: 'Sora';
+  border: none;
+  border-right: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+}
+
+.interval:hover,
+.interval:active {
+  background: rgb(78, 82, 110);
+  box-shadow: 0px 0px 15px rgba(78, 82, 110);
 }
 
 .description-header {
@@ -123,7 +141,7 @@ button.active {
   align-items: center;
   grid-template-areas: 
   "img img symbol price"
-  "img img name price";
+  "img img name watchlist";
 }
 
 .coin-name {
@@ -144,6 +162,11 @@ button.active {
 
 .coin-price {
   grid-area: price;
+  justify-content: right;
+}
+
+.star {
+  grid-area: watchlist;
 }
 
 .item:hover {
@@ -155,10 +178,18 @@ button.active {
   background: rgb(45, 45, 63);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
   display: grid;
-  position: absolute;
   bottom: 0;
   width: 96%;
   padding: 2%;
+  margin-top: 2%;
+}
+
+.intro {
+  padding:2%
+}
+
+.nav-title {
+  color: rgb(45, 45, 63);
 }
 
 .positive {
@@ -187,11 +218,12 @@ a {
 }
 
 .show-menu {
+  display: flex;
   position: absolute;
   right: 0;
   background: lightgray;
-  justify-content: right;
-  height: 80%;
+  justify-content: left;
+  height: 100vh;
   width: 25%;
 }
 
@@ -202,10 +234,12 @@ li {
 
 .input {
   padding-left: 5%;
-  height: 2vw;
+  min-height: 35px;
   border: 1px solid lightgray;
   border-radius: 50px;
   margin-right: 2vw; 
+  font-size: large;
+  font-family: 'sora';
 }
 
 .coin-info {
@@ -257,7 +291,108 @@ svg {
  margin: 2%;
 }
 
+.user-container {
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  margin: 3% 30%;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 2%;
+  padding-bottom: 5%;
+  min-width: 300px;
+  height: auto;
+}
+
+.form-components {
+  width: 20vw;
+  display: grid;
+  gap: 5%;
+  align-items: center;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.form-label {
+  font-family: 'Sora';
+  font-size: larger;
+}
+
+.user-title {
+  font-size: 2vw;
+  text-align: center;
+}
+
+.form-bottom {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-form {
+  font-size: larger;
+  padding: 1vw;
+  min-width: 200px;
+}
+
+.form-input {
+  width: 100%;
+  height: 5vh;
+  border-radius: 15px;
+  padding-left: 5%;
+  font-family: 'Sora';
+  font-size: large;
+  font-family: 'Sora';
+}
+
+.edit-profile-form {
+  border: 1px solid lightgray;
+  border-radius: 15px;
+  margin: 3% 30%;
+  gap: 3%;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-bottom: 1vw;
+}
+
+.profile-row {
+  width: 100%;
+  font-family: 'sora';
+  font-size: large;
+}
+
+.profile-input {
+  min-height: 30px ;
+  font-size: large;
+  font-family: 'Sora';
+  min-width: 400px;
+  padding-left: 5%;
+  border-radius: 15px;
+}
+
+.profile-button {
+  justify-self: center;
+  min-width: 150px;
+}
+
+.profile-link {
+  text-align: center;
+  font-size: larger;
+}
+
+.watchlist-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 5%
+}
+
 @media (max-width: 600px) {
+  .user-title {
+    font-size: 20px;
+  }
   .show-menu {
     width: 100%;
     height: 100%;
@@ -298,8 +433,19 @@ svg {
     height: 4vh;
   }
   .footer {
+  bottom: 0;
   position: relative;
   width: 96%;
   padding: 2%;
+  }
+  .user-container {
+    min-height: 600px;
+    margin: none;
+    align-self: center;
+    left: 0;
+  }
+  body {
+    margin: 0;
+    padding: 0;
   }
 }

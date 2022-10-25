@@ -7,6 +7,11 @@ import Coin from './pages/coin/Coin';
 import Coins from './pages/coins/Coins';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
+import Profile from './pages/profile/Profile';
+import ForgotPassword from './pages/forgot-password/ForgotPassword';
+import PrivateRoute from './context/PrivateRoute';
 
 Sentry.init({
   dsn: "https://565220893610483caa58d47b39fa0e9d@o4504024449351680.ingest.sentry.io/4504024450990081",
@@ -28,6 +33,10 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/coins' element={<Coins />} />
               <Route path='/coins/:id' element={<Coin />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/signup' element={<Signup />} />
+              <Route path='/forgot-password' element={<ForgotPassword />} />
+              <Route path='/profile' element={<PrivateRoute><Profile /></PrivateRoute>} />
           </Routes>
         </div>
       </div>

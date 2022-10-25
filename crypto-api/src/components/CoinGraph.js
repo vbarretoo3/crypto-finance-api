@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
 import useAxios from '../hooks/useAxios';
 import moment from 'moment';
@@ -26,10 +26,12 @@ import {
     Legend
   );
 
+
 function CoinGraph() {
     const {id} = useParams()
     const [interval, setInterval] = useState(7)
-    const { response } = useAxios(`coins/${id}/market_chart?vs_currency=usd&days=${interval}`);
+    const [format, setFormat] = useState('MMM DD')
+    const { response} = useAxios(`coins/${id}/market_chart?vs_currency=usd&days=${interval}`, interval)
 
     if(!response) return null
   
@@ -39,19 +41,30 @@ function CoinGraph() {
 
     function handleIntervalChage(parm) {
         setInterval(parm)
-        console.log(parm)
+        if (parm === 1) {
+            setFormat('HH:mm')
+        } else if (parm === 7) {
+            setFormat('DD HH:MM')
+        } else if (parm === 30) {
+            setFormat('MMM DD HH:mm')
+        } else if (parm === 180) {
+            setFormat('MMM DD')
+        }   else if (parm === 365) {
+            setFormat('YYYY/MMM')
+        }
     }
     
     const coinChartData = response.prices.map(value => ({ x: value[0], y: value[1].toFixed(2) }));
 
     const data = {
-        labels: coinChartData.map(value => moment(value.x).format('MMM DD HH:mm')),
+        labels: coinChartData.map(value => moment(value.x).format(format)),
         datasets: [
         {
             fill: true,
             label: id,
             data: coinChartData.map(val => val.y),
             borderColor: 'rgb(23, 138, 23)',
+            color: '#fff',
             backgroundColor: 'rgba(38, 179, 38, 0.4)',
         }
         ]
