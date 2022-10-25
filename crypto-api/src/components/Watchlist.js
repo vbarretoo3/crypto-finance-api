@@ -31,7 +31,7 @@ function Watchlist() {
       <h2>
         Watchlist
       </h2>
-      <div className='coins'>
+      <div className='coins-watchlist'>
         {watchlist && watchlist.map((value) => <WatchlistCoins key={value.stringValue} coin={value.stringValue} />)}
       </div>
     </>

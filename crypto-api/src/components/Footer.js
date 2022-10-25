@@ -1,4 +1,5 @@
 import React from 'react'
+console.log('footer')
 
 export default function Footer() {
   return (

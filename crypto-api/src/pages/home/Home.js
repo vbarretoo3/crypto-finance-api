@@ -16,6 +16,10 @@ export default function Home() {
     history("/coins")
   }
 
+  function handleSignUp() {
+    history("/signup")
+  }
+
   useEffect(() => {
     axios.get(url).then(response => {
       setData(response.data)
@@ -37,7 +41,7 @@ export default function Home() {
             coins you want to keep an eye on. Signup today!
           </p>
         <div className='menu'>
-          <button className='button-coins' path='/signup'>Sign Up!</button>
+          <button className='button-coins' onClick={() => handleSignUp()}>Sign Up!</button>
         </div>
         {user.currentUser ?  <Watchlist /> : null}
         </div>

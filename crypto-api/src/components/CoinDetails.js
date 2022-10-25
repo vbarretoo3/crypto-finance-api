@@ -10,7 +10,7 @@ export default function CoinDetails({coin}) {
   const user = useAuth()
   const history = useNavigate()
   function handleClick(param) {
-    history("/coins/"+ param.toLowerCase())
+    history("/coins/"+ param)
   }
   
   const [watchlist, setWatchlist] = useState(null)
@@ -41,10 +41,10 @@ export default function CoinDetails({coin}) {
   return (
     <>
       <div className="item">
-        <img onClick={() => handleClick(coin.name)} src={coin.image} className='coin-image' alt='/'/>
-        <h3 onClick={() => handleClick(coin.name)} className='coin-symbol'>{coin.symbol.toUpperCase()}</h3>
-        <p onClick={() => handleClick(coin.name)} className='coin-name'>{coin.name}</p>
-        <p onClick={() => handleClick(coin.name)} className='coin-price'>${coin.current_price.toLocaleString()}</p>
+        <img onClick={() => handleClick(coin.id)} src={coin.image} className='coin-image' alt='/'/>
+        <h3 onClick={() => handleClick(coin.id)} className='coin-symbol'>{coin.symbol.toUpperCase()}</h3>
+        <p onClick={() => handleClick(coin.id)} className='coin-name'>{coin.name}</p>
+        <p onClick={() => handleClick(coin.id)} className='coin-price'>${coin.current_price.toLocaleString()}</p>
         {watchlist.map((value) => value.stringValue).includes(coin.id) ? <AiFillStar className='star' onClick={() => handleRemove(coin.id)}/> : <AiOutlineStar className='star' onClick={() => handleAdd(coin.id)}/>}
       </div>
     </>
