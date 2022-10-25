@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useAuth } from '../context/AuthContext';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, arra } from 'firebase/firestore';
 import {db} from  '../Firebase';
 import WatchlistCoins from './WatchlistCoins';
 
@@ -15,10 +15,15 @@ function Watchlist() {
         setWatchlist(res._document.data.value.mapValue.fields.watchlist.arrayValue.values)
         })
     }
-  }, [])
+  }, [watchlist])
 
   if (!watchlist) {
     return null
+  }
+
+  async function handleClick() {
+    console.log(watchlist)
+    console.log(watchlist.map((value) => value.stringValue).includes('test'))
   }
 
   return (
