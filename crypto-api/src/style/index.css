@@ -144,13 +144,31 @@ code {
   "img img name watchlist";
 }
 
+.item-watchlist {
+  border: 1px solid lightgray;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  border-radius: 25px;
+  width: 90%;
+  height: 125px;
+  padding: 2%;
+  gap: 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  grid-template-areas: 
+  "img img symbol price"
+  "img img name watchlist";
+}
+
 .coin-name {
   grid-area: name;
   text-align: left;
 }
 
 .coin-image {
-  height: 70%;
+  height: 50%;
   width: 70%;
   grid-area: img;
 }
@@ -167,6 +185,9 @@ code {
 
 .star {
   grid-area: watchlist;
+  height: 2rem;
+  width: 2rem;
+  justify-self: right;
 }
 
 .item:hover {
@@ -389,7 +410,7 @@ svg {
   gap: 5%
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1050px) {
   .user-title {
     font-size: 20px;
   }

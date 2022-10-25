@@ -34,12 +34,12 @@ function WatchlistCoins(coin) {
 
     return (
       <>
-        <div className="item">
+        <div className="item-watchlist">
           <img onClick={() => handleClick(data[0].id)} src={data[0].image} className='coin-image' alt='/'/>
           <h3 onClick={() => handleClick(data[0].id)} className='coin-symbol'>{data[0].symbol.toUpperCase()}</h3>
           <p onClick={() => handleClick(data[0].id)} className='coin-name'>{data[0].name}</p>
           <p onClick={() => handleClick(data[0].id)} className='coin-price'>${data[0].current_price.toLocaleString()}</p>
-          <AiFillStar onClick={() => handleRemove(data[0].id)} className='watchlist' />
+          <AiFillStar onClick={() => handleRemove(data[0].id)} className='star' />
         </div>
       </>
     )
