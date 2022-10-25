@@ -21,7 +21,6 @@ function WatchlistCoins(coin) {
 
     
     if (!data) return null
-    console.log(data)
 
     return (
       <>

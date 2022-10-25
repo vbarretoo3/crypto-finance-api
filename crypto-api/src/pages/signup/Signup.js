@@ -2,14 +2,12 @@ import React, { useRef, useState } from 'react';
 import { Form, Alert } from 'react-bootstrap';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
-import { consoleSandbox } from '@sentry/utils';
 
 export default function AddUser() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const { signup, createWatchlist } = useAuth()
-    const user = useAuth()
+    const { signup } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const history = useNavigate()
