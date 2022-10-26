@@ -21,11 +21,6 @@ function Watchlist() {
     return null
   }
 
-  async function handleClick() {
-    console.log(watchlist)
-    console.log(watchlist.map((value) => value.stringValue).includes('test'))
-  }
-
   return (
     <>
       <h2>

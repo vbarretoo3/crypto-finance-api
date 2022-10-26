@@ -5,8 +5,9 @@ import SpecialInfo from './SpecialInfo';
 function Navbar() {
     const user = useAuth()
   return (
-    <nav>
+    <nav className='navigation'>
         <ul>
+            <h2 className='nav-header'>Main</h2>
             {user.currentUser ? <SpecialInfo/>: null}
             <li>
                 <a href='/coins'>See all coins</a>
@@ -20,6 +21,33 @@ function Navbar() {
                     <a href='/signup'>Create an Account</a>
                 </li>
             </>}
+        </ul>
+        <ul>
+            <h2 className='nav-header'>About</h2>
+            <li>
+                <a href='/about'>About Us</a>
+            </li>
+            <li>
+                <a href='/careers'>Careers</a>
+            </li>
+            <li>
+                <a href='/social'>Social</a>
+            </li>
+        </ul>
+        <ul>
+            <h2 className='nav-header'>Support</h2>
+            <li>
+                <a href='/faq'>FAQ</a>
+            </li>
+            <li>
+                <a href='/contact'>Contact Us</a>
+            </li>
+            <li>
+                <a href='/data'>Our Data</a>
+            </li>
+            <li>
+                <a href='/careers'>API</a>
+            </li>
         </ul>
     </nav>
   )

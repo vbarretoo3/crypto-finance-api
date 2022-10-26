@@ -16,8 +16,10 @@ export default function CoinDetails({coin}) {
   const [watchlist, setWatchlist] = useState(null)
   const docRef = doc(db, "users", user.currentUser.uid)
 
+  //TODO: test for infinite loops when quota for firebase resets
   useEffect(() => {
     if (user.currentUser !== null) {
+      console.log('test')
       const unsubscribe = getDoc(docRef).then(res => {
         setWatchlist(res._document.data.value.mapValue.fields.watchlist.arrayValue.values)
         })

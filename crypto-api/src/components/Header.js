@@ -19,8 +19,10 @@ export default function Header() {
   useEffect (() => {
     axios.get(url).then(response => {
       setData(response.data)
-      setSearch(data.map((value) => value.id))
-    }).catch((error) => {
+      if (data !== null) {
+        setSearch(data.map((value) => value.id))
+      }
+      }).catch((error) => {
       console.log(error)
     })
   }, [query])
