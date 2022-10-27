@@ -46,7 +46,7 @@ export default function Footer() {
                 <a href='/data'>Our Data</a>
             </li>
             <li>
-                <a href='/careers'>API</a>
+                <a rel='noopener' href='https://coingecko.com/en/api' target='_blank'>API</a>
             </li>
         </ul>
     </nav>

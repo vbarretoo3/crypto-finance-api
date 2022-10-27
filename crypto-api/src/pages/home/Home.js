@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import CoinSummary from '../../components/CoinSummary';
 import {useAuth} from '../../context/AuthContext'
+import Intro from '../../components/Intro'
 import Watchlist from '../../components/Watchlist';
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
   return (
     <>
       <div className='border'>
+        <Intro />
         <div className='intro'>
           <h1>Get Crypto data!</h1>
           <p>

@@ -259,6 +259,7 @@ a {
   justify-content: left;
   height: 100vh;
   width: 25%;
+  z-index: 1;
 }
 
 li {
