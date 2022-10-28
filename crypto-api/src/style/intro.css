@@ -93,8 +93,9 @@
 }
 
 @media (max-width: 1050px){
-    .design-border{
-        display: none;
+    :root {
+        --gap: .5vw;
+        --unit: .5vw;
     }
 }
 
