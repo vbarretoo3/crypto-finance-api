@@ -16,10 +16,8 @@ import PrivateRoute from './context/PrivateRoute';
 import {useAuth} from './context/AuthContext'
 import About from './pages/about/About';
 import Careers from './pages/careers/Careers';
-import Social from './pages/social/Social';
 import FAQ from './pages/faq/FAQ';
 import Contact from './pages/contact/Contact';
-import Data from './pages/data/Data';
 
 Sentry.init({
   dsn: "https://565220893610483caa58d47b39fa0e9d@o4504024449351680.ingest.sentry.io/4504024450990081",
@@ -48,10 +46,8 @@ function App() {
               <Route path='/profile' element={<PrivateRoute><Profile /></PrivateRoute>} />
               <Route path='/about' element={<About />} />
               <Route path='/careers' element={<Careers/>} />
-              <Route path='/social' element={<Social/>} />
               <Route path='/faq' element={<FAQ/>} />
               <Route path='/contact' element={<Contact/>} />
-              <Route path='/data' element={<Data/>} />
           </Routes>
         </div>
       </div>

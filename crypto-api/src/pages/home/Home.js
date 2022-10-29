@@ -38,7 +38,7 @@ export default function Home() {
           <h1>Get Crypto data!</h1>
           <p>
             We from MockCrypto are happy to provide you the best data tools for your
-            crypto analysis. This is a project that utilize an API to update your favourite coins.
+            crypto analysis. This is a project that uses an API to update your favourite coins.
             Feel free to suggest new coins, or different tools. Create an account today and mark the
             coins you want to keep an eye on. Signup today!
           </p>

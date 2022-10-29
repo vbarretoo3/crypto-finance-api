@@ -205,17 +205,22 @@ code {
   color: rgb(27, 18, 92);
 }
 
-.footer {
+.footer-container {
   border-top: 1px solid black;
   background: rgb(45, 45, 63);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: relative;
   bottom: 0;
   width: 96%;
   padding: 2%;
   margin-top: 2%;
+  min-height: 21vw;
+}
+
+.footer {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .intro {
@@ -257,7 +262,7 @@ a {
   right: 0;
   background: lightgray;
   justify-content: left;
-  height: 100vh;
+  height: 95vh;
   width: 25%;
   z-index: 1;
 }
@@ -268,7 +273,6 @@ li {
 }
 
 .input {
-  padding-left: 5%;
   min-height: 35px;
   border: 1px solid lightgray;
   border-radius: 50px;
@@ -378,7 +382,6 @@ svg {
   padding-left: 5%;
   font-family: 'Sora';
   font-size: large;
-  font-family: 'Sora';
 }
 
 .edit-profile-form {
@@ -422,6 +425,200 @@ svg {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 5%
+}
+
+.about-container {
+  padding: 1vw 3vw;
+  gap: 3vw
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 1px solid rgba(212, 212, 212, 0.4);
+}
+
+.accordion {
+  position: relative;
+  margin: 60px auto;
+  color: black;
+  width: 80%;
+}
+
+[id*="open-accordion"], [id*="close-accordion"] {
+  color: black;
+  background: rgb(45, 45, 63);
+  line-height: 40px;
+  border: 1px solid white;
+  box-shadow: 0 0 15px white, inset 0 0 10px white;
+  height: 3vw;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 99%;
+}
+
+[id*="close-accordion"] {
+  display: none;
+  color: black;
+}
+
+.accordion a {
+  color: rgb(255, 255, 255);
+  font-family: 'Sora';
+  font-size: 1.25em;
+  font-weight: bold;
+  padding-top: 1%;
+  padding-left: 2%;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+[id*="open-accordion"]:after, [id*="close-accordion"]:after {
+  content: "";
+  padding-top: 1%;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgb(255, 255, 255);
+  color: black;
+  position: absolute;
+  right: 5px;
+  top: 15px;
+  z-index: 999;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+}
+
+.target-fix {
+  color: black;
+  display: block;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.accordion-content {
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 17px rgba(255, 255, 255);
+  border: rgb(255, 255, 255);
+  height: 0;
+  color: rgb(33, 35, 54);
+  font-weight: bold;
+  font-family: 'Sora';
+  font-size: 1vh;
+  margin: -1px auto 0;
+  padding: 0 2.5%;
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  z-index: -1;
+}
+
+.accordion span:target ~ .accordion-content {
+  padding-top: 1%;
+  display: block;
+  height: auto;
+  padding-bottom: 25px;
+  padding-top: 10px;
+}
+
+.accordion span:target ~ [id*="close-accordion"] {
+  padding-top: 1%;
+  display: block;
+}
+
+.accordion span:target ~ [id*="open-accordion"] {
+  display: none;
+}
+
+.accordion span:target ~ [id*="close-accordion"]:after {
+  padding-top: 1%;
+  border-top: 10px solid rgb(255, 255, 255);
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  margin: 2%;
+  padding: 2%;
+  border: 1px solid rgba(211, 211, 211, .4);
+  border-radius: 50px;
+  min-width: 50%;
+}
+
+.contact-title {
+  text-align: center;
+}
+
+.contact-form {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 15px;
+}
+
+.contact-input {
+  width: 100%;
+  border-radius: 15px;
+  font-family: 'Sora';
+  font-size: large;
+}
+.name {height: 5vh;}
+.message {height: 15vh;}
+
+.form-btn {
+  width: 10vw;
+  border: 1px solid whitesmoke;
+  border-radius: 50px;
+  justify-self: center;
+  font-size: 18pt;
+  color: whitesmoke;
+  background: rgb(1, 1, 31);
+  font-family: 'Sora';
+  padding: 2%;
+}
+
+.form-btn:hover {
+  border: none;
+  color: rgb(1, 1, 31);
+  border: 1px solid whitesmoke;
+  background: whitesmoke;
+  cursor: pointer;
+}
+
+.accordion-link {
+  color:rgb(54, 57, 82);
+}
+
+h2 {
+  font-size: 2.25vw;
+}
+
+h3 {
+  font-size: 1.25vw;
+}
+
+a {
+  font-size: 1vw;
+}
+
+p {
+  font-size: 1vw;
+}
+
+div {
+  font-size: 1vw;
+}
+
+button {
+  font-size: 1vw;
 }
 
 @media (max-width: 1050px) {

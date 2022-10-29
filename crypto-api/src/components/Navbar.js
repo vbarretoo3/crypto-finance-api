@@ -30,9 +30,6 @@ function Navbar() {
             <li>
                 <a href='/careers'>Careers</a>
             </li>
-            <li>
-                <a href='/social'>Social</a>
-            </li>
         </ul>
         <ul>
             <h2 className='nav-header'>Support</h2>
@@ -43,10 +40,22 @@ function Navbar() {
                 <a href='/contact'>Contact Us</a>
             </li>
             <li>
-                <a href='/data'>Our Data</a>
+                <a href='/careers'>API</a>
+            </li>
+        </ul>
+        <ul>
+            <h2 className='nav-header'>Social</h2>
+            <li>
+                <a rel='noopener' href='https://www.facebook.com/victor.b.deoliveira' target='_blank'>Facebook</a>
             </li>
             <li>
-                <a href='/careers'>API</a>
+                <a rel='noopener' href='https://www.instagram.com/victorreba/' target='_blank'>Instagram</a>
+            </li>
+            <li>
+                <a rel='noopener' href='https://www.linkedin.com/in/victorbarreto3/' target='_blank'>LinkedIn</a>
+            </li>
+            <li>
+                <a rel='noopener' href='https://github.com/vbarretoo3' target='_blank'>GitHub</a>
             </li>
         </ul>
     </nav>
